@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1090088983287",
+    "project_id": "when-app-c691d",
+    "storage_bucket": "when-app-c691d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090088983287:android:35b1d7a6c8a071342491f2",
+        "android_client_info": {
+          "package_name": "io.flyeasy.whenapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-5H8YV6iyvzryrgHuSzWVLJ5w1OabCUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
