@@ -64,6 +64,7 @@ dependencies:
   easy_localization: ^3.0.7+1
   country_code_picker: ^3.4.1
   floating_bottom_bar: ^0.0.3
+  page_transition: ^2.1.0
 
 
 
@@ -108,6 +109,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo,Roboto_Condensed/Cairo/Cairo-VariableFont_slnt,wght.ttf
+
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo,Roboto_Condensed/Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
