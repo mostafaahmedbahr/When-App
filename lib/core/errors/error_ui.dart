@@ -12,7 +12,7 @@ class ErrorUi extends StatelessWidget {
         children: [
           Icon(
             Icons.error_outline,
-            color: AppColors.redColor,
+            color: AppColors.error,
             size: 64,
           ),
           verticalSpace(16),
@@ -21,7 +21,7 @@ class ErrorUi extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: AppColors.redColor,
+              color: AppColors.error,
             ),
           ),
           verticalSpace(8),
@@ -30,7 +30,7 @@ class ErrorUi extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 14,
-              color: AppColors.greyColor1,
+              color: AppColors.gray100,
             ),
           ),
           verticalSpace(16),

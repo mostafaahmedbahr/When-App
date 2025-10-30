@@ -14,7 +14,7 @@ import '../../main_importants.dart';
           SvgPicture.asset(
             SvgImages.serverErrorImage,
             colorFilter: const ColorFilter.mode(
-              AppColors.greyColor1,
+              AppColors.gray100,
               BlendMode.srcIn,
             ),
           ),

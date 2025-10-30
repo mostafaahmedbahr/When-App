@@ -21,8 +21,8 @@ class LinearPercentWidget extends StatelessWidget {
         style:   const TextStyle(fontSize: 12.0),
       ),
       barRadius : const Radius.circular(4),
-      backgroundColor:backgroundColor?? AppColors.mainColor.withValues(alpha: 0.4),
-      progressColor: AppColors.mainColor,
+      backgroundColor:backgroundColor?? AppColors.primary.withValues(alpha: 0.4),
+      progressColor: AppColors.primary,
     );
   }
 }

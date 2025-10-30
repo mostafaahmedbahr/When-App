@@ -44,7 +44,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onFieldSubmitted,
     this.expands  ,
     this.fillColor = AppColors.whiteColor,
-    this.borderColor = AppColors.greyColor4,
+    this.borderColor = AppColors.gray400,
     this.hintColor = const Color.fromRGBO(150, 150, 150, 1),
     this.radius = 8.0,
   });
@@ -66,7 +66,7 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         labelText: labelText,
-        labelStyle: const TextStyle(color: AppColors.mainColor),
+        labelStyle: const TextStyle(color: AppColors.primary),
         contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         prefixIcon: prefixIcon,
         prefix: prefix,

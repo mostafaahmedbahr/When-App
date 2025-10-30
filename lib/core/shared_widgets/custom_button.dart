@@ -28,11 +28,11 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius ?? 8),
               side:   BorderSide(
                 width: 1.0,
-                color:borderColor ?? AppColors.darkMainColor,
+                color:borderColor ?? AppColors.primary,
               )
           ),
-          backgroundColor: btnColor ?? AppColors.darkMainColor,
-            foregroundColor : AppColors.mainColor,
+          backgroundColor: btnColor ?? AppColors.primary,
+            foregroundColor : AppColors.primary,
         ),
         child:  btnText,
       ),
