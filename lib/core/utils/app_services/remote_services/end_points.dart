@@ -38,9 +38,9 @@ class EndPoints {
     static const makeOrder = "make-order";
     static const checkCoupon = "check-coupon";
     static const areas = "areas";
-    static const notifications = "notifications";
-    static const readNotificationsAll = "read-notifications/all";
-    static const notificationsCount = "un-read-notifications-count";
+    static const notifications = "notifications_helpers";
+    static const readNotificationsAll = "read-notifications_helpers/all";
+    static const notificationsCount = "un-read-notifications_helpers-count";
     static const authFirebaseToken = "auth/firebase-token";
     static const walletHistory = "wallet-history";
 

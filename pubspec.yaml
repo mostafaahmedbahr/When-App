@@ -65,6 +65,8 @@ dependencies:
   country_code_picker: ^3.4.1
   floating_bottom_bar: ^0.0.3
   page_transition: ^2.1.0
+  flutter_local_notifications:
+  awesome_notifications:
 
 
 

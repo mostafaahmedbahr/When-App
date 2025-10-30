@@ -110,7 +110,7 @@ abstract class LocaleKeys {
   static const point = "point";
   static const transformation = "transformation";
   static const previousTransfers = "previousTransfers";
-  static const notifications = "notifications";
+  static const notifications = "notifications_helpers";
   static const logoutConfirmationMessage = "logoutConfirmationMessage";
   static const cancel = "cancel";
   static const selectLanguage = "selectLanguage";
