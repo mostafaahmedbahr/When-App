@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'core/utils/bloc_observer.dart';
 import 'core/utils/notifications_helpers/firebase_messaging_service.dart';
 import 'core/utils/notifications_helpers/get_fcm_token.dart';
@@ -9,7 +9,7 @@ import 'main_importants.dart';
 import 'my_app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+// final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
 void main() async {
   debugPrint("main");

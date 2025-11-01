@@ -1,12 +1,10 @@
-
-import 'package:easy_localization/easy_localization.dart';
+import 'package:when/features/login/presentation/view_model/login_cubit.dart';
 import 'package:when/features/login/presentation/views/widgets/login_view_body.dart';
-
 import '../../../../main_importants.dart';
+import '../../data/repos/login_repos_imple.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +22,9 @@ class LoginView extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: LoginViewBody(),
+          child: BlocProvider(
+              create: (context)=>LoginCubit(getIt.get<LoginRepoImpl>()),
+              child: LoginViewBody()),
         ),
       ),
     );

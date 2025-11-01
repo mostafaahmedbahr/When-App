@@ -1,7 +1,7 @@
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:when/features/forget_paasword/presentation/views/widgets/pin_code_fields_widget.dart';
-import 'package:when/features/forget_paasword/presentation/views/widgets/timer_count.dart';
+import 'package:when/features/forget_password/presentation/views/widgets/pin_code_fields_widget.dart';
+import 'package:when/features/forget_password/presentation/views/widgets/timer_count.dart';
 
 import '../../../../core/shared_widgets/back_icon.dart';
 import '../../../../core/shared_widgets/logo_widget.dart';
