@@ -44,9 +44,9 @@ class CustomTextFormField extends StatelessWidget {
     this.onFieldSubmitted,
     this.expands  ,
     this.fillColor = AppColors.whiteColor,
-    this.borderColor = AppColors.gray400,
+    this.borderColor = AppColors.whiteColor,
     this.hintColor = const Color.fromRGBO(150, 150, 150, 1),
-    this.radius = 8.0,
+    this.radius = 16.0,
   });
 
   @override
@@ -74,19 +74,19 @@ class CustomTextFormField extends StatelessWidget {
         filled: true,
         fillColor: fillColor,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(radius ?? 8),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
             color: borderColor ??   AppColors.whiteColor,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(radius ?? 8),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
             color: borderColor ?? AppColors.whiteColor,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(radius ?? 8),
+          borderRadius: BorderRadius.circular(radius ?? 16),
           borderSide: BorderSide(
             color: borderColor ?? AppColors.whiteColor,
           ),

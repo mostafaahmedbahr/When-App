@@ -42,14 +42,14 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
 
   runApp(EasyLocalization(
-    startLocale: const Locale('ar',""),
+    startLocale: const Locale('en',""),
     supportedLocales: const [
       Locale('ar',""),
       Locale('en',""),
     ],
     path: 'lib/lang',
     saveLocale: true,
-    fallbackLocale: const Locale('ar',""),
+    fallbackLocale: const Locale('en',""),
     useOnlyLangCode: true,
     assetLoader: const CodegenLoader(),
     child: const MyApp(),

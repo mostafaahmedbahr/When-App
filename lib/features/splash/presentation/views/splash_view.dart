@@ -1,4 +1,6 @@
+
 import '../../../../main_importants.dart';
+import '../../../login/presentation/views/login_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -28,11 +30,11 @@ class SplashViewState extends State<SplashView> with SingleTickerProviderStateMi
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        // Navigator.of(context).pushReplacement(
-        //   MaterialPageRoute(builder: (context) =>
-        //   CacheTokenManger.userToken!=null ? const LayoutView():
-        //   const OnBoardingView()), // Your next screen
-        // );
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) =>
+          // CacheTokenManger.userToken!=null ? const LayoutView():
+          const LoginView()), // Your next screen
+        );
       }
     });
   }

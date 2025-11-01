@@ -36,10 +36,7 @@ class ErrorUi extends StatelessWidget {
           verticalSpace(16),
           CustomButton(
             width: 200,
-              btnText: Text("Try , Again",style: TextStyle(
-                color: AppColors.whiteColor,
-                fontSize: 18,
-              ),),
+              btnText: "Try , Again",
             onPressed: onPressed,
           ),
 

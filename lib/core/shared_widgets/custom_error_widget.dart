@@ -12,7 +12,7 @@ import '../../main_importants.dart';
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SvgPicture.asset(
-            SvgImages.serverErrorImage,
+            "SvgImages.serverErrorImage",
             colorFilter: const ColorFilter.mode(
               AppColors.gray100,
               BlendMode.srcIn,

@@ -34,6 +34,8 @@ class MyApp extends StatelessWidget {
       ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, locale) {
+          print(locale.languageCode);
+          print("object");
           // Update the app locale when LanguageCubit state changes
           context.setLocale(locale);
           return MaterialApp(
@@ -44,6 +46,7 @@ class MyApp extends StatelessWidget {
             // locale: context.locale,
             debugShowCheckedModeBanner: false,
             title: LocaleKeys.appName.tr(),
+
             theme: ThemeData(
               fontFamily: locale.languageCode == 'ar' ? "Cairo" : "RobotoCondensed",
               scaffoldBackgroundColor: AppColors.whiteColor,
@@ -51,6 +54,7 @@ class MyApp extends StatelessWidget {
                 scrolledUnderElevation: 0,
                 backgroundColor: AppColors.whiteColor,
               ),
+
               primarySwatch: Colors.blue,
               bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                 backgroundColor: AppColors.whiteColor,
