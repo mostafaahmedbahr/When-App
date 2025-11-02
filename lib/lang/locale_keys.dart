@@ -35,6 +35,9 @@ abstract class LocaleKeys {
   static const  enterPasswordFirst = "enterPasswordFirst";
   static const  passwordsDontMatch = "passwordsDontMatch";
   static const  confirm = "confirm";
+  static const  welcome = "welcome";
+  static const  welcomeMsg = "welcomeMsg";
+  static const  visitor = "visitor";
 
 
 
