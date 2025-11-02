@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 
 import '../../../../features/forget_password/data/repos/forget_password_repo_imple.dart';
 import '../../../../features/login/data/repos/login_repos_imple.dart';
+import '../../../../features/reset_password/data/repos/reset_password_repo_imple.dart';
 import '../../../../features/verification_code/data/repos/verification_code_repo_imple.dart';
 import 'api_service.dart';
 
@@ -20,10 +21,9 @@ void setup() {
   getIt.registerSingleton<VerificationCodeRepoImpl>(VerificationCodeRepoImpl(
     getIt.get<ApiService>(),
   ));
-
-  // getIt.registerSingleton<RegisterRepoImpl>(RegisterRepoImpl(
-  //   getIt.get<ApiService>(),
-  // ));
+  getIt.registerSingleton<ResetPasswordRepoImpl>(ResetPasswordRepoImpl(
+    getIt.get<ApiService>(),
+  ));
   // getIt.registerSingleton<MoreRepoImpl>(MoreRepoImpl(
   //   getIt.get<ApiService>(),
   // ));

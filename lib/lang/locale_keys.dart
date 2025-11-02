@@ -28,6 +28,13 @@ abstract class LocaleKeys {
   static const  codeLength = "codeLength";
   static const  codeNumbersOnly = "codeNumbersOnly";
   static const  codeRequired = "codeRequired";
+  static const  setNewPassword = "setNewPassword";
+  static const  newPassword = "newPassword";
+  static const  confirmNewPassword = "confirmNewPassword";
+  static const  repeatPasswordRequired = "repeatPasswordRequired";
+  static const  enterPasswordFirst = "enterPasswordFirst";
+  static const  passwordsDontMatch = "passwordsDontMatch";
+  static const  confirm = "confirm";
 
 
 

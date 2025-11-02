@@ -41,10 +41,10 @@ class VerificationCodeCubit extends Cubit<VerificationCodeStates> {
     emit(ChangeOtpValueState());
   }
 
-  @override
-  Future<void> close() {
-    verificationCodeController.dispose();
-    return super.close();
-  }
+  // @override
+  // Future<void> close() {
+  //   verificationCodeController.dispose();
+  //   return super.close();
+  // }
 
 }

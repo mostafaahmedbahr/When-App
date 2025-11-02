@@ -155,22 +155,22 @@ class MyValidators {
   //   return null;
   // }
   //
-  // static String? repeatPasswordValidator({String? value, String? password}) {
-  //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.repeatPasswordRequired.tr();
-  //   }
-  //
-  //   if (password == null || password.isEmpty) {
-  //     return LocaleKeys.enterPasswordFirst.tr();
-  //   }
-  //
-  //   if (value != password) {
-  //     return LocaleKeys.passwordsDontMatch.tr();
-  //   }
-  //
-  //   return null;
-  // }
-  //
+  static String? repeatPasswordValidator({String? value, String? password}) {
+    if (value == null || value.isEmpty) {
+      return LocaleKeys.repeatPasswordRequired.tr();
+    }
+
+    if (password == null || password.isEmpty) {
+      return LocaleKeys.enterPasswordFirst.tr();
+    }
+
+    if (value != password) {
+      return LocaleKeys.passwordsDontMatch.tr();
+    }
+
+    return null;
+  }
+
   // static String? phoneValidator(String? value, {String? countryCode}) {
   //   if (value == null || value.isEmpty) {
   //     return LocaleKeys.phoneRequired.tr();

@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:when/features/reset_password/presentation/views/reset_password_view.dart';
 
 import '../../../../../main_importants.dart';
 import '../../view_model/verification_code_cubit.dart';
@@ -27,10 +28,10 @@ class VerificationCodeButton extends StatelessWidget {
           CustomButton(
           btnText: LocaleKeys.confirmLogIn.tr(),
           onPressed: (){
-            if(formKey.currentState!.validate()){
-              context.read<VerificationCodeCubit>().verificationCode();
-            }
-
+           AppNav.customNavigator(context: context, screen: ResetPasswordView());
+            // if(formKey.currentState!.validate()){
+            //   context.read<VerificationCodeCubit>().verificationCode();
+            // }
           },
         );
     }
