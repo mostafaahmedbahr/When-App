@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:when/features/login/presentation/views/login_view.dart';
 
 import '../../../../../main_importants.dart';
+import '../../../../register/presentation/views/register_view.dart';
 
 class StartViewBody extends StatelessWidget {
   const StartViewBody({super.key});
@@ -43,7 +44,9 @@ class StartViewBody extends StatelessWidget {
             Expanded(
               child: CustomButton(
                 btnText: LocaleKeys.register.tr(),
-                onPressed: (){},
+                onPressed: (){
+                  AppNav.customNavigator(context: context, screen: RegisterView());
+                },
               ),
             ),
           ],

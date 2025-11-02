@@ -31,6 +31,7 @@ abstract class LocaleKeys {
   static const  setNewPassword = "setNewPassword";
   static const  newPassword = "newPassword";
   static const  confirmNewPassword = "confirmNewPassword";
+  static const  confirmPassword = "confirmPassword";
   static const  repeatPasswordRequired = "repeatPasswordRequired";
   static const  enterPasswordFirst = "enterPasswordFirst";
   static const  passwordsDontMatch = "passwordsDontMatch";
@@ -38,6 +39,25 @@ abstract class LocaleKeys {
   static const  welcome = "welcome";
   static const  welcomeMsg = "welcomeMsg";
   static const  visitor = "visitor";
+  static const  profilePhoto = "profilePhoto";
+  static const  change = "change";
+  static const  delete = "delete";
+  static const  chooseAMethodForUploadingTheImage = "chooseAMethodForUploadingTheImage";
+  static const  takingPictureWithTheCamera = "takingPictureWithTheCamera";
+  static const  selectionFromTheGallery = "selectionFromTheGallery";
+  static const  nameNoSpecialChars = "nameNoSpecialChars";
+  static const  nameNoNumbers = "nameNoNumbers";
+  static const  nameTooLong = "nameTooLong";
+  static const  nameTooShort = "nameTooShort";
+  static const  nameValidate = "nameValidate";
+  static const  phone = "phone";
+  static const  phoneInternationalInvalid = "phoneInternationalInvalid";
+  static const  phoneUSInvalid = "phoneUSInvalid";
+  static const  phoneEgyptInvalid = "phoneEgyptInvalid";
+  static const  phoneRequired = "phoneRequired";
+  static const  gender = "gender";
+  static const  pleaseSelectYourDateOfBirth = "pleaseSelectYourDateOfBirth";
+  static const  birthDate = "birthDate";
 
 
 
