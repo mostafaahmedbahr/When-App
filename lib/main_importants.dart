@@ -29,5 +29,7 @@ export 'package:when/lang/locale_keys.dart';
 export 'package:when/core/errors/error_ui.dart';
 export 'package:when/core/shared_widgets/click_here_to_register.dart';
 export 'package:when/core/shared_widgets/cubits/auth_cubit/auth_cubit.dart';
+export 'package:when/core/shared_widgets/back_icon.dart';
+export 'package:when/core/shared_widgets/logo_widget.dart';
 
 

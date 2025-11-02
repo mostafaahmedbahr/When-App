@@ -44,6 +44,24 @@ class MyValidators {
   //   return null;
   // }
 
+
+  static String? codeValidator(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return LocaleKeys.codeRequired.tr();
+    }
+
+    final code = value.trim();
+    if (!RegExp(r'^\d+$').hasMatch(code)) {
+      return LocaleKeys.codeNumbersOnly.tr();
+    }
+    if (code.length != 5) {
+      return LocaleKeys.codeLength.tr();
+    }
+
+    return null;
+  }
+
+
   static String? emailValidator(String? value) {
     if (value == null || value.isEmpty) {
       return LocaleKeys.emailValidate.tr();

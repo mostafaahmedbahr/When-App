@@ -13,8 +13,9 @@ class LoginViewBody extends StatelessWidget {
     return Form(
       key: formKey,
       child: ListView(
+        padding: EdgeInsets.zero,
         children: [
-          verticalSpace(100),
+          verticalSpace(98),
           Image.asset(PngsImages.logo),
           verticalSpace(50),
           LoginForm(),

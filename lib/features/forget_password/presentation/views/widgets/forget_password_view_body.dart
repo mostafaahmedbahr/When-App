@@ -1,5 +1,3 @@
-import 'package:when/core/shared_widgets/back_icon.dart';
-import 'package:when/core/shared_widgets/logo_widget.dart';
 import '../../../../../main_importants.dart';
 import 'forget_password_button.dart';
 import 'forget_password_form.dart';
@@ -14,8 +12,9 @@ class ForgetPasswordViewBody extends StatelessWidget {
     return Form(
       key: formKey,
       child: ListView(
+        padding: EdgeInsets.zero,
         children: [
-          verticalSpace(30),
+          verticalSpace(40),
           BackIcon(),
           verticalSpace(18),
           LogoWidget(),

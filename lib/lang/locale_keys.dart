@@ -25,6 +25,9 @@ abstract class LocaleKeys {
   static const  passwordRequireNumber = "passwordRequireNumber";
   static const  passwordRequireSpecial = "passwordRequireSpecial";
   static const  next = "next";
+  static const  codeLength = "codeLength";
+  static const  codeNumbersOnly = "codeNumbersOnly";
+  static const  codeRequired = "codeRequired";
 
 
 

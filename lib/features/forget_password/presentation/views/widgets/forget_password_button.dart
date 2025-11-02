@@ -1,5 +1,6 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:when/features/verification_code/presentation/views/verification_code_view.dart';
 import '../../../../../main_importants.dart';
 import '../../view_model/forget_password_cubit.dart';
 import '../../view_model/forget_password_states.dart';
@@ -30,7 +31,9 @@ class ForgetPasswordButton extends StatelessWidget {
             builder: (context){
               return CustomButton(
                   btnText: LocaleKeys.next.tr(),
-                  onPressed: (){},
+                  onPressed: (){
+                    AppNav.customNavigator(context: context, screen: VerificationCodeView());
+                  },
               );
             },
           );
