@@ -53,6 +53,7 @@ class UploadProfileImage extends StatelessWidget {
             ),
             horizontalSpace(20),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(text: LocaleKeys.profilePhoto.tr(),
                   style: AppStyles.white16SemiBold,),
@@ -83,7 +84,7 @@ class UploadProfileImage extends StatelessWidget {
                           foregroundColor: AppColors.primary,
                         ),
                         child: CustomText(
-                          text: LocaleKeys.passwordRequireLowercase.tr(),
+                          text: LocaleKeys.delete.tr(),
                           style: AppStyles.red14Medium,
                         )),
                   ],

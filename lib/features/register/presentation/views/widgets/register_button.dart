@@ -5,8 +5,8 @@ import 'package:when/features/register/presentation/view_model/register_states.d
 import '../../../../../main_importants.dart';
 
 class RegisterButton extends StatelessWidget {
-  const RegisterButton({super.key});
-
+  const RegisterButton({super.key, required this.formKey});
+  final GlobalKey<FormState> formKey;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<RegisterCubit , RegisterStates>(
@@ -21,9 +21,31 @@ class RegisterButton extends StatelessWidget {
         }
       },
     builder: (context,state){
-        return CustomButton(
+      var registerCubit = context.read<RegisterCubit>();
+      return
+        state is RegisterLoadingState ? CustomLoading():
+        CustomButton(
           btnText: LocaleKeys.register.tr(),
-          onPressed: (){},
+          onPressed: (){
+
+            if ( registerCubit.phoneNumber.isEmpty) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(LocaleKeys.phoneRequired.tr()),
+                  backgroundColor: Colors.red,
+                ),
+              );
+            }
+            if (registerCubit.selectedGender == null) {
+              registerCubit.showGenderValidation();
+            }
+
+
+            if (formKey.currentState!.validate()) {
+
+              registerCubit.register();
+            }
+          },
         );
     },
     );

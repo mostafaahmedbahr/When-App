@@ -25,4 +25,7 @@ class RegisterSelectGenderState  extends RegisterStates{}
 class RegisterSelectBirthDateState  extends RegisterStates{}
 
 
+class RegisterValidationErrorState  extends RegisterStates{}
+
+
 

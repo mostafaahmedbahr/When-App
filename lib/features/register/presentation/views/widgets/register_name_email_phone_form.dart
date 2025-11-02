@@ -11,6 +11,7 @@ class RegisterNameEmailPhoneForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RegisterCubit, RegisterStates>(
+
       builder: (context, state) {
         var registerCubit = context.read<RegisterCubit>();
 
@@ -47,46 +48,59 @@ class RegisterNameEmailPhoneForm extends StatelessWidget {
             verticalSpace(20),
 
             /// Phone Field using IntlPhoneField
-            IntlPhoneField(
-              controller: registerCubit.phoneCon,
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                hintText: LocaleKeys.phone.tr(),
-                labelStyle: const TextStyle(color: AppColors.gray),
-                contentPadding:
-                const EdgeInsets.symmetric(vertical: 17, horizontal: 15),
-                filled: true,
-                fillColor: AppColors.whiteColor,
-                hintStyle: const TextStyle(
-                  fontSize: 14,
-                  color: Color.fromRGBO(150, 150, 150, 1),
-                ),
-                suffixIcon: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: SvgPicture.asset(SvgImages.phone),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: AppColors.whiteColor),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: AppColors.whiteColor),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: AppColors.whiteColor),
-                ),
-              ),
-              initialCountryCode: 'EG',
-              keyboardType: TextInputType.number,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              onChanged: (PhoneNumber phone) {
-                registerCubit.phoneNumber = phone.completeNumber;
-                registerCubit.countryCode = phone.countryCode;
+            BlocBuilder<RegisterCubit, RegisterStates>(
 
-              },
-              validator: (value) => MyValidators.phoneValidator(value.toString(),countryCode:registerCubit.countryCode),
+    builder: (context, state) {
+
+
+      return IntlPhoneField(
+                  decoration: InputDecoration(
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    hintText: LocaleKeys.phone.tr(),
+                    labelStyle: const TextStyle(color: AppColors.gray),
+                    contentPadding:
+                    const EdgeInsets.symmetric(vertical: 17, horizontal: 15),
+                    filled: true,
+                    fillColor: AppColors.whiteColor,
+                    hintStyle: const TextStyle(
+                      fontSize: 14,
+                      color: Color.fromRGBO(150, 150, 150, 1),
+                    ),
+                    suffixIcon: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: SvgPicture.asset(SvgImages.phone),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(color: AppColors.whiteColor),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(color: AppColors.whiteColor),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(color: AppColors.whiteColor),
+                    ),
+                  ),
+                  initialCountryCode: 'EG',
+                  keyboardType: TextInputType.number,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: (PhoneNumber phone) {
+                    registerCubit.phoneNumber = phone.completeNumber;
+                    registerCubit.countryCode = phone.countryCode;
+                  },
+                  validator: (value){
+                   return MyValidators.phoneValidator(
+                      value?.completeNumber ?? '',
+                      countryCode: registerCubit.countryCode,
+                    );
+                  },
+
+
+                );
+        }
+
             ),
 
 

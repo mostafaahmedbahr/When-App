@@ -29,7 +29,7 @@ class RegisterViewBody extends StatelessWidget {
           verticalSpace(20),
           RegisterBirthDate(),
           verticalSpace(40),
-          RegisterButton(),
+          RegisterButton(formKey: formKey,),
         ],
       ),
     );

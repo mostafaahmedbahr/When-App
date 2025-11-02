@@ -47,6 +47,7 @@ class AppColors {
   static const Color success = green600;
   static const Color warning = Color(0xffff9800);
   static const Color error = Color(0xfff44336);
+  static const Color deepRed  = Color(0xFFB22222);
   static const Color info = blue600;
 
   // Background colors

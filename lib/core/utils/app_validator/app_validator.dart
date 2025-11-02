@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import '../../../lang/locale_keys.dart';
+ import '../../../lang/locale_keys.dart';
 
 class MyValidators {
   static String? displayNameValidator(String? displayName) {
@@ -172,7 +172,7 @@ class MyValidators {
   }
 
   static String? phoneValidator(String? value, {String? countryCode}) {
-    if (value == null || value.isEmpty) {
+    if (value == null || value.isEmpty || value=='') {
       return LocaleKeys.phoneRequired.tr();
     }
 
@@ -197,4 +197,8 @@ class MyValidators {
 
     return null;
   }
+
+
+
+
 }

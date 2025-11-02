@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:when/features/register/presentation/view_model/register_states.dart';
-import '../../../../core/shared_functions/upload_image.dart';
 import '../../../../core/utils/helpers/convert_date.dart';
 import '../../../../main_importants.dart';
 import '../../data/register_models/register_model.dart';
@@ -35,7 +34,6 @@ class RegisterCubit extends Cubit<RegisterStates> {
   var emailCon = TextEditingController();
   var passCon = TextEditingController();
   var confirmPassCon = TextEditingController();
-  var phoneCon = TextEditingController();
 
 
   File? profileImage;
@@ -55,28 +53,19 @@ class RegisterCubit extends Cubit<RegisterStates> {
 
 
   RegisterModel? registerModel;
-  Future<void> register({
-    required String name,
-    required String email,
-    required String phone,
-    required File? image,
-    required String password,
-    required String passwordConfirmation,
-    required String gender,
-    required String dateOfBirth,
-  }) async {
+  Future<void> register() async {
     emit(RegisterLoadingState());
       FormData formData = FormData.fromMap({
-        "name": name,
-        "email": email,
-        "phone": phone,
-        "image": image != null
-            ? await MultipartFile.fromFile(image.path, filename: image.path.split('/').last)
+        "name": nameCon.text,
+        "email": emailCon.text,
+        "phone": phoneNumber,
+        "image": profileImage != null
+            ? await MultipartFile.fromFile(profileImage!.path, filename: profileImage!.path.split('/').last)
             : null,
-        "password": password,
-        "password_confirmation": passwordConfirmation,
-        "gender": gender,
-        "date_of_birth": dateOfBirth,
+        "password": passCon.text,
+        "password_confirmation": confirmPassCon.text,
+        "gender": selectedGender,
+        "date_of_birth": birthDate,
       });
       final result = await registerRepo!.register(data: formData);
       return result.fold((failure) {
@@ -102,7 +91,9 @@ class RegisterCubit extends Cubit<RegisterStates> {
     passCon.clear();
     confirmPassCon.clear();
     phoneNumber='';
-    phoneCon.clear();
+    countryCode='';
+    selectedGender=null;
+    birthDate=null;
     emit(RegisterInitState());
   }
 
@@ -128,9 +119,20 @@ class RegisterCubit extends Cubit<RegisterStates> {
 
   String? birthDate;
 
+
   void selectBirthDate(DateTime date) {
     birthDate = DateFormatterClass.toNormalFormat(date);
     emit(RegisterSelectBirthDateState());
+  }
+
+  bool showGenderValidationError = false;
+  void showGenderValidation() {
+    if (selectedGender == null) {
+      showGenderValidationError = true;
+    } else {
+      showGenderValidationError = false;
+    }
+    emit(RegisterValidationErrorState());
   }
 
 

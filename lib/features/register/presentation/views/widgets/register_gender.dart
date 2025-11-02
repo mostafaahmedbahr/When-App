@@ -13,29 +13,46 @@ class RegisterGender extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RegisterCubit, RegisterStates>(
       buildWhen: (previous, current) {
-        return current is RegisterSelectGenderState;
+        return current is RegisterSelectGenderState || current is RegisterValidationErrorState;
       },
       builder: (context, state) {
         var registerCubit = context.read<RegisterCubit>();
-        return CustomDropdown<Gender>(
-          value: registerCubit.selectedGender,
-          items: Gender.values,
-          hint: LocaleKeys.gender.tr(),
-          prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: SvgPicture.asset(SvgImages.gender,colorFilter: ColorFilter.mode(AppColors.blackColor, BlendMode.srcIn),),
-          ),
-          onChanged: (Gender? value) {
-            registerCubit.selectGender(value);
-          },
-          itemDisplayBuilder: (Gender gender) {
-            switch (gender) {
-              case Gender.male:
-                return "Male";
-              case Gender.female:
-                return "Female";
-            }
-          },
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomDropdown<Gender>(
+              value: registerCubit.selectedGender,
+              items: Gender.values,
+              hint: LocaleKeys.gender.tr(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: SvgPicture.asset(SvgImages.gender,colorFilter: ColorFilter.mode(AppColors.blackColor, BlendMode.srcIn),),
+              ),
+              onChanged: (Gender? value) {
+                registerCubit.selectGender(value);
+                registerCubit.showGenderValidation();
+              },
+              borderColor: registerCubit.showGenderValidationError? AppColors.deepRed : AppColors.whiteColor,
+              itemDisplayBuilder: (Gender gender) {
+                switch (gender) {
+                  case Gender.male:
+                    return "Male";
+                  case Gender.female:
+                    return "Female";
+                }
+              },
+            ),
+            if (registerCubit.showGenderValidationError)
+              Padding(
+                padding: const EdgeInsets.only(left: 16, top: 4),
+                child: Text(
+                  LocaleKeys.pleaseSelectYourGender.tr(),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: AppColors.deepRed,
+                  ),
+                ),
+              ),
+          ],
         );
       },
     );

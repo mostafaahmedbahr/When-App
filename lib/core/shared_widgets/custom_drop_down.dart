@@ -45,6 +45,7 @@ class CustomDropdown<T> extends StatelessWidget {
           if (prefixIcon != null) prefixIcon!,
           Expanded(
             child: DropdownButton<T>(
+
               padding: padding,
               isExpanded: true,
               underline: const SizedBox.shrink(),

@@ -10,7 +10,7 @@ class RegisterBirthDate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RegisterCubit, RegisterStates>(
-      buildWhen: (previous, current){
+      buildWhen: (previous, current) {
         return current is RegisterSelectBirthDateState;
       },
       builder: (context, state) {
@@ -18,21 +18,27 @@ class RegisterBirthDate extends StatelessWidget {
         return CustomTextFormField(
           readOnly: true,
           controller: TextEditingController(
-            text: registerCubit.birthDate ,
+            text: registerCubit.birthDate,
           ),
           hintText: LocaleKeys.birthDate.tr(),
           prefixIcon: Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Icon(Icons.calendar_today,color: AppColors.gray300,),
+            child: Icon(Icons.calendar_today, color: AppColors.gray300),
           ),
           onPressed: () async {
             final date = await selectDate(context);
             if (date != null) {
               registerCubit.selectBirthDate(date);
+
+              if(context.mounted){
+                Form.of(context).validate();
+              }
+
             }
           },
           validator: (value) {
-            if (registerCubit.birthDate == null) {
+            if (registerCubit.birthDate == null ||
+                registerCubit.birthDate!.isEmpty) {
               return LocaleKeys.pleaseSelectYourDateOfBirth.tr();
             }
             return null;
