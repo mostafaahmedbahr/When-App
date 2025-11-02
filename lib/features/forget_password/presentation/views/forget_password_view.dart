@@ -1,10 +1,11 @@
-import 'package:when/features/login/presentation/view_model/login_cubit.dart';
-import 'package:when/features/login/presentation/views/widgets/login_view_body.dart';
-import '../../../../main_importants.dart';
-import '../../data/repos/login_repos_imple.dart';
+ import 'package:when/features/forget_password/data/repos/forget_password_repo_imple.dart';
+import 'package:when/features/forget_password/presentation/views/widgets/forget_password_view_body.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+import '../../../../main_importants.dart';
+import '../view_model/forget_password_cubit.dart';
+
+class ForgetPasswordView extends StatelessWidget {
+  const ForgetPasswordView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +26,11 @@ class LoginView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: BlocProvider(
-              create: (context)=>LoginCubit(getIt.get<LoginRepoImpl>()),
-              child: LoginViewBody()),
+              create: (context)=>ForgetPasswordCubit(getIt.get<ForgetPasswordRepoImpl>()),
+              child: ForgetPasswordViewBody()),
         ),
       ),
+      //body:   ResetPasswordViewBody(),
     );
   }
 }

@@ -51,6 +51,8 @@ class SplashViewState extends State<SplashView> with SingleTickerProviderStateMi
     debugPrint("SplashView");
     return Scaffold(
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,

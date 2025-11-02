@@ -8,28 +8,31 @@ class BackIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){
-        Navigator.pop(context);
-      },
-      child: Container(
-        padding: EdgeInsets.all(8),
-        height: 40,
-        width:  40,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xff0070B2),
-                Color(0xff03447B,),
-              ],
-              stops: [0.0, 0.7],
-            ),
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.primary
+    return Align(
+      alignment: AlignmentDirectional.topStart,
+      child: InkWell(
+        onTap: (){
+          Navigator.pop(context);
+        },
+        child: Container(
+          padding: EdgeInsets.all(8),
+          height: 40,
+          width:  40,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xff0070B2),
+                  Color(0xff03447B,),
+                ],
+                stops: [0.0, 0.7],
+              ),
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.primary
+          ),
+          child: SvgPicture.asset(SvgImages.arrow),
         ),
-        child: SvgPicture.asset(SvgImages.arrow),
       ),
     );
   }

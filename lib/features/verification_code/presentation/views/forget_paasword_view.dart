@@ -1,14 +1,15 @@
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:when/features/forget_password/presentation/views/widgets/pin_code_fields_widget.dart';
-import 'package:when/features/forget_password/presentation/views/widgets/timer_count.dart';
+import 'package:when/features/verification_code/presentation/views/widgets/pin_code_fields_widget.dart';
+import 'package:when/features/verification_code/presentation/views/widgets/timer_count.dart';
+
 
 import '../../../../core/shared_widgets/back_icon.dart';
 import '../../../../core/shared_widgets/logo_widget.dart';
 import '../../../../main_importants.dart';
 
-class ForgetPasswordView extends StatelessWidget {
-  const ForgetPasswordView({super.key});
+class VerificationCodeView extends StatelessWidget {
+  const VerificationCodeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +33,7 @@ class ForgetPasswordView extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               verticalSpace(50),
-              Align(
-                  alignment: AlignmentDirectional.topStart,
-                  child: BackIcon()),
+              BackIcon(),
               verticalSpace(30),
               LogoWidget(),
               verticalSpace(50),
